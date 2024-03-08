@@ -7,5 +7,5 @@ import org.springframework.data.domain.Pageable;
 
 
 public interface ITaskService extends IGenerateService<Task>{
-    Iterable<Task> findAllByProvince(Category category);
+    Iterable<Task> findAllByCategory(Category category);
 }

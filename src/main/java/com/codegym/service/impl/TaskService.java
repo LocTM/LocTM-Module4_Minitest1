@@ -3,6 +3,7 @@ package com.codegym.service.impl;
 import com.codegym.model.Task;
 import com.codegym.model.Category;
 import com.codegym.repository.ICategoryRepository;
+import com.codegym.repository.ITaskRepository;
 import com.codegym.service.ITaskService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -40,4 +41,5 @@ public class TaskService implements ITaskService {
     public Iterable<Task> findAllByCategory(Category category) {
         return iTaskRepository.findAllByCategory(category);
     }
+
 }
