@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head th:replace="/layout :: head">
+    <title>List Task</title>
+</head>
+<body>
+<h3>Tasks</h3>
+<p>
+    <a th:href="@{/tasks/create}">
+        Add new Task
+    </a>
+</p>
+<p>
+    <a th:href="@{/category}">
+        Categories
+    </a>
+</p>
+<div class="notify">
+    <div th:if="${message}">
+        <span th:text="${message}"></span>
+    </div>
+</div>
+
+<table id = "tasks">
+    <thead>
+    <tr>
+        <th>STT</th>
+        <th>Name</th>
+        <th>Note</th>
+        <th>Amount</th>
+        <th>Category</th>
+        <th>Update</th>
+        <th>Delete</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="t,tStatus : ${tasks}">
+        <td th:text="${tStatus.count}"></td>
+        <td th:text="${t.getName()}"></td>
+        <td th:text="${t.getNote()}"></td>
+        <td th:text="${t.getAmount()}"></td>
+        <td th:text="${t.getCategory().getName()}"></td>
+        <td><a th:href="@{/tasks/update/{id}(id=${t.getId()})}">update</a></td>
+        <td><a th:href="@{/tasks/delete/{id}(id=${t.getId()})}">delete</a></td>
+    </tr>
+    </tbody>
+</table>
+<footer th:replace="/layout :: footer"></footer>
+</body>
+</html>

@@ -13,7 +13,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import java.util.Optional;
 
 @Controller
-@RequestMapping("/categorys")
+@RequestMapping("/category")
 public class CategoryController {
     @Autowired
     private ICategoryService categoryService;
@@ -41,7 +41,7 @@ public class CategoryController {
                          RedirectAttributes redirectAttributes) {
         categoryService.save(category);
         redirectAttributes.addFlashAttribute("message", "Create new category successfully");
-        return "redirect:/categorys";
+        return "redirect:/category";
     }
 
     @GetMapping("/update/{id}")
@@ -61,7 +61,7 @@ public class CategoryController {
                          RedirectAttributes redirect) {
         categoryService.save(category);
         redirect.addFlashAttribute("message", "Update category successfully");
-        return "redirect:/categorys";
+        return "redirect:/category";
     }
 
     @GetMapping("/view-province/{id}")
