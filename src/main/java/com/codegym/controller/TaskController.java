@@ -14,7 +14,7 @@ import java.util.Optional;
 
 @Controller
 @RequestMapping("/tasks")
-public class CustomerController {
+public class TaskController {
     @Autowired
     private ITaskService taskService;
 
