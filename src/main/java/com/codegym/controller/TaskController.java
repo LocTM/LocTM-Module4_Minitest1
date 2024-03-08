@@ -21,7 +21,7 @@ public class TaskController {
     @Autowired
     private ICategoryService categoryService;
 
-    @ModelAttribute("categorys")
+    @ModelAttribute("category")
     public Iterable<Category> listCategory() {
         return categoryService.findAll();
     }

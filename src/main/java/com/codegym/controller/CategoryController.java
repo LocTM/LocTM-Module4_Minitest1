@@ -57,14 +57,14 @@ public class CategoryController {
     }
 
     @PostMapping("/update/{id}")
-    public String update(@ModelAttribute("province") Category category,
+    public String update(@ModelAttribute("category") Category category,
                          RedirectAttributes redirect) {
         categoryService.save(category);
         redirect.addFlashAttribute("message", "Update category successfully");
         return "redirect:/category";
     }
 
-    @GetMapping("/view-province/{id}")
+    @GetMapping("/view-category/{id}")
     public ModelAndView viewCategory(@PathVariable("id") Long id){
         Optional<Category> categoryOptional = categoryService.findById(id);
         if(!categoryOptional.isPresent()){

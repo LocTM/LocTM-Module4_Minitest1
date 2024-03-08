@@ -29,7 +29,7 @@
         <div>
             <label for="category">Category</label>
             <select id="category" th:field="*{category}">
-                <option th:each="p : ${category}" th:value="${p.id}" th:text="${p.name}"></option>
+                <option th:each="c : ${category}" th:value="${c.id}" th:text="${c.name}"></option>
             </select>
         </div>
         <input type="submit" value="Save"/>
