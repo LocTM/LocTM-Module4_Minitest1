@@ -1,4 +1,4 @@
-package com.codegym.minitest2_m4;
+package com.codegym;
 
 import java.io.*;
 import javax.servlet.http.*;
