@@ -26,6 +26,7 @@
     <tr>
         <th>STT</th>
         <th>Name</th>
+        <th>Description</th>
         <th>Update</th>
     </tr>
     </thead>
@@ -33,10 +34,11 @@
     <tr th:each="p, pStatus : ${category}">
         <td th:text="${pStatus.count}"></td>
         <td><a th:href="@{/category/view-province/{id}(id=${p.getId()})}" th:text="${p.getName()}"></a></td>
+        <td><a th:href="@{/category/view-province/{id}(id=${p.getDescription()})}" th:text="${p.getDescription()}"></a></td>
         <td><a th:href="@{/category/update/{id}(id=${p.getId()})}">update</a></td>
-    </tr>
     </tbody>
 </table>
+<button><a th:href="@{/category/total}">Get Total Amount by Category</a></button>
 <footer th:replace="/layout :: footer"></footer>
 </body>
 </html>

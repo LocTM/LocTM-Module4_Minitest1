@@ -1,6 +1,7 @@
 package com.codegym.service.impl;
 
 import com.codegym.model.Category;
+import com.codegym.model.dto.TotalAmount;
 import com.codegym.repository.ICategoryRepository;
 import com.codegym.service.ICategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,5 +32,10 @@ public class CategoryService implements ICategoryService {
     @Override
     public void remove(Long id) {
         iCategoryRepository.deleteById(id);
+    }
+
+    @Override
+    public Iterable<TotalAmount> getTotalAmount() {
+        return iCategoryRepository.getTotalAmount();
     }
 }

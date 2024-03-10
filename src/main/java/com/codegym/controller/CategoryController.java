@@ -2,6 +2,7 @@ package com.codegym.controller;
 
 import com.codegym.model.Task;
 import com.codegym.model.Category;
+import com.codegym.model.dto.TotalAmount;
 import com.codegym.service.ITaskService;
 import com.codegym.service.ICategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -82,5 +83,12 @@ public class CategoryController {
         return modelAndView;
     }
 
+    @GetMapping("/total")
+    public ModelAndView total(){
+        ModelAndView modelAndView = new ModelAndView("/category/total");
+        Iterable<TotalAmount> totalAmounts = categoryService.getTotalAmount();
+        modelAndView.addObject("totals", totalAmounts);
+        return modelAndView;
+    }
 
 }
